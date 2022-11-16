@@ -1,0 +1,21 @@
+[
+  {
+    "id": "breakfast",
+    "name_en": "Breakfast",
+    "name_sp": "Desayuno",
+    "image": ""
+  },
+  {
+    "id": "lunch",
+    "name_en": "Luch",
+    "name_sp": "Almuerzo",
+    "image": ""
+  },
+  {
+    "id": "sandwich",
+    "name_en": "Sandwich",
+    "name_sp": "Bocadillos",
+    "image": ""
+  }
+
+]
