@@ -11,10 +11,11 @@ function Container() {
 
   return (
     < >
-      <div className="p-8">
-      <div className='grid grid-rows-3'>
+      <div >
+      <div>
 
-      <div className='p-3 flex item-center justify-center'>
+      <div className='grid grid-cols-3 px-8 gap-4'>
+        
       {categories.map(category =>
      
         <CategoryItem {...category} key={category.id} />
