@@ -3,79 +3,55 @@
     "id": "breakfast",
     "name_en": "Breakfast",
     "name_sp": "Desayuno",
-    "image": ""
+    "image": "/assets/categories-menu/general/breakfast.png"
   },
   {
     "id": "lunch",
     "name_en": "Luch",
     "name_sp": "Almuerzo",
-    "image": ""
+    "image": "/assets/categories-menu/general/lunch.png"
   },
   {
-    "id": "sandwich",
-    "name_en": "Sandwich",
+    "id": "sandwiches",
+    "name_en": "Sandwiches",
     "name_sp": "Bocadillos",
-    "image": ""
+    "image":  "/assets/categories-menu/general/sandwiches.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "beers",
+    "name_en": "Beers",
+    "name_sp": "Cerveza",
+    "image": "/assets/categories-menu/general/beers.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "cocktails",
+    "name_en": "Cocktails",
+    "name_sp": "Cocktails",
+    "image": "/assets/categories-menu/general/cocktails.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "desserts",
+    "name_en": "Desserts",
+    "name_sp": "Postres",
+    "image": "/assets/categories-menu/general/desserts.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "tapas_and_bites",
+    "name_en": "Tapas and Bites",
+    "name_sp": "Tapas y Raciones",
+    "image": "/assets/categories-menu/general/tapas_and_bites.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "to_share",
+    "name_en": "To share",
+    "name_sp": "Tablas",
+    "image": "/assets/categories-menu/general/to_share.png"
   },
   {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
-  },
-  {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
-  },
-  {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
-  },
-  {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
-  },
-  {
-    "id": "lunch",
-    "name_en": "Luch",
-    "name_sp": "Almuerzo",
-    "image": ""
+    "id": "horchateria_and_pastries",
+    "name_en": "Horchateria y Postres",
+    "name_sp": "Horchateria and Pastries",
+    "image": "/assets/categories-menu/general/horchateria_and_pastries.png"
   }
 
 ]
