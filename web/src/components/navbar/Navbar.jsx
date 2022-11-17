@@ -17,7 +17,7 @@ const itemVariants = {
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenWines, setIsOpenWines] = useState(false);
-
+  const [isOpenGeneral, setIsOpenGeneral] = useState(false);
   const [winesCategories, setWinesCategories] = useState(winesData);
   const [generalCategories, setgeneralCategories] = useState(generalData);
 
@@ -75,13 +75,13 @@ function Navbar() {
           className="text-center border-b-2 text-neutral-600 font-bold"
           variants={itemVariants}
           whileTap={{ scale: 0.97 }}
-          onClick={() => setIsOpenWines(!isOpenWines)}
+          onClick={() => setIsOpenGeneral(!isOpenGeneral)}
         >
           General Menu
         </motion.li>
 
         <motion.ul className="text-center border-b-2 text-neutral-600 font-bold">
-          {generalCategories && isOpen && isOpenWines &&
+          {generalCategories && isOpen &&
             generalCategories.map((categories) => (
               <motion.li className="text-center border-b-2 font-normal text-neutral-600">
                 {categories.name_en}
