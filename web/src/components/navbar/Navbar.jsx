@@ -1,18 +1,31 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import "./navbar.css";
 import winesData from "../../data/wines.category.json";
 import generalData from "../../data/general.category.json";
+import SubMenu from "./sub-menu/SubMenu";
 
 const itemVariants = {
   open: {
     opacity: 1,
     y: 0,
-    transition: { type: "spring", stiffness: 300, damping: 24 },
+    transition: {duration:2, type: "spring", stiffness: 300, damping: 24, staggerChildren: 0.07, delayChildren: 0.2},
+    
   },
-  closed: { opacity: 0, y: 20, transition: { duration: 0.2 } },
+  closed: { opacity: 0, y: 20, transition: { duration: 2, staggerChildren: 0.05, staggerDirection: -1 } },
 };
+
+const variants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 }
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1, ease:"easeOut", duration:2 }
+  }
+};
+
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +35,9 @@ function Navbar() {
   const [generalCategories, setgeneralCategories] = useState(generalData);
 
   return (
+    <>
+
+
     <motion.nav
       initial={false}
       animate={isOpen ? "open" : "closed"}
@@ -52,12 +68,14 @@ function Navbar() {
         variants={{
           open: {
             clipPath: "inset(0% 0% 0% 0% round 10px)",
+            whileHover:{ scale: 1.1 },
             transition: {
               type: "spring",
               bounce: 0,
               duration: 0.7,
               delayChildren: 0.3,
               staggerChildren: 0.05,
+              height: 0
             },
           },
           closed: {
@@ -66,49 +84,18 @@ function Navbar() {
               type: "spring",
               bounce: 0,
               duration: 0.3,
+              height: 0
             },
           },
         }}
         style={{ pointerEvents: isOpen ? "auto" : "none" }}
       >
-        <motion.li
-          className="text-center border-b-2 text-neutral-600 font-bold"
-          variants={itemVariants}
-          whileTap={{ scale: 0.97 }}
-          onClick={() => setIsOpenGeneral(!isOpenGeneral)}
-        >
-          General Menu
-        </motion.li>
-
-        <motion.ul className="text-center border-b-2 text-neutral-600 font-bold">
-          {generalCategories && isOpen &&
-            generalCategories.map((categories) => (
-              <motion.li className="text-center border-b-2 font-normal text-neutral-600">
-                {categories.name_en}
-              </motion.li>
-            ))}
-        </motion.ul>
-
-        <motion.li
-          className="text-center border-b-2 text-neutral-600 font-bold"
-          variants={itemVariants}
-          whileTap={{ scale: 0.97 }}
-          onClick={() => setIsOpenWines(!isOpenWines)}
-        >
-          Wines Menu
-        </motion.li>
-
-        <motion.ul className="text-center border-b-2 text-neutral-600 font-bold">
-          {winesCategories && isOpen && isOpenWines &&
-            winesCategories.map((categories) => (
-              <motion.li className="text-center border-b-2 font-normal text-neutral-600">
-                {categories.name_en}
-              </motion.li>
-            ))}
-        </motion.ul>
-
+          <SubMenu itemVariants={itemVariants} isOpen={isOpen} subIsOpen={isOpenGeneral} setIsOpenList={setIsOpenGeneral} name_en={'General Menu'} categories={generalCategories}/>
+          <SubMenu itemVariants={itemVariants} isOpen={isOpen} subIsOpen={isOpenWines} setIsOpenList={setIsOpenWines} name_en={'Wines Menu'} categories={winesCategories}/>
       </motion.ul>
     </motion.nav>
+    </>
+
   );
 }
 
